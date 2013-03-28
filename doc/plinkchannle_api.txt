@@ -46,6 +46,12 @@ Channel4C_API int Channel4C_CallMode chl_ack(const char* fr, const char* to, uns
 // node channel asynchronous communication interface.
 Channel4C_API int Channel4C_CallMode chl_post(const char* fr, const char* to, char* buf, unsigned int len, unsigned int timeout);
 Channel4C_API int Channel4C_CallMode chl_get(unsigned int* type, unsigned int* params, char* fr, char* to, char* buf, unsigned int* len, unsigned int timeout);
+//    Type_Chl_Notify = 0,
+//    Type_Chl_Req,
+//    Type_Chl_Online,
+//    Type_Chl_Offline,
+//    Type_Chl_Join,
+//    Type_Chl_Abort
 
 
 //////////////////////////////////////////////////////////////////////////
