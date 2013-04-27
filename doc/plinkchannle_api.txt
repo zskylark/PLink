@@ -10,9 +10,9 @@ Channel4C_API bool Channel4C_CallMode chl_create(const char* name, unsigned int 
 Channel4C_API void Channel4C_CallMode chl_destroy(const char* name);
 
 Channel4C_API int Channel4C_CallMode chl_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
-/// return 3 : channel had connected. please reconnect.
+    /// return 3 : channel had connected. please reconnect.
 
-Channel4C_API int Channel4C_CallMode chl_reconnect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
+Channel4C_API int Channel4C_CallMode chl_reconnect(const char* chan, unsigned int timeout_ms);
 Channel4C_API int Channel4C_CallMode chl_disconnect(const char* chan);
 
 Channel4C_API int Channel4C_CallMode chl_join(const char* chan, unsigned int timeout_ms);
