@@ -6,8 +6,8 @@ Channel4C_API bool Channel4C_CallMode chl_release();
 
 //////////////////////////////////////////////////////////////////////////
 // node channel management interface.
-Channel4C_API bool Channel4C_CallMode chl_create(const char* name, unsigned int heartbeat);
-Channel4C_API void Channel4C_CallMode chl_destroy(const char* name);
+Channel4C_API bool Channel4C_CallMode chl_open(const char* name, unsigned int heartbeat);
+Channel4C_API void Channel4C_CallMode chl_close(const char* name);
 
 Channel4C_API int Channel4C_CallMode chl_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
     /// return 3 : channel had connected. please reconnect.
@@ -45,7 +45,7 @@ Channel4C_API int Channel4C_CallMode chl_get_pkg_body_max_size(const char* chan)
 
 //////////////////////////////////////////////////////////////////////////
 // node channel heartbeat management interface.
-Channel4C_API int Channel4C_CallMode chl_heartbeat(const char* chan);
+Channel4C_API int Channel4C_CallMode chl_heartbeat(const char* chan, unsigned int timeout_ms);
 
 
 //////////////////////////////////////////////////////////////////////////
