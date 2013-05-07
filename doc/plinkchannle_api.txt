@@ -6,7 +6,7 @@ Channel4C_API bool Channel4C_CallMode chl_release();
 
 //////////////////////////////////////////////////////////////////////////
 // node channel management interface.
-Channel4C_API bool Channel4C_CallMode chl_open(const char* name, unsigned int heartbeat);
+Channel4C_API bool Channel4C_CallMode chl_open(const char* name, unsigned int heartbeat_ms);
 Channel4C_API void Channel4C_CallMode chl_close(const char* name);
 
 Channel4C_API int Channel4C_CallMode chl_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
