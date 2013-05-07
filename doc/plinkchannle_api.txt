@@ -72,6 +72,8 @@ Channel4C_API int Channel4C_CallMode chl_get(unsigned int* type, unsigned int* p
 Channel4C_API bool Channel4C_CallMode chl_connected(const char* chan);
 Channel4C_API bool Channel4C_CallMode chl_joined(const char* chan);
 
+Channel4C_API int Channel4C_CallMode chl_onlines(const char* chan, int* ol_total, char* ol_buf, unsigned int ol_len);
+
 
 //////////////////////////////////////////////////////////////////////////
 // the version of sdk.
