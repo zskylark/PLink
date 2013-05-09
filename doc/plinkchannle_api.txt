@@ -7,13 +7,13 @@ Channel4C_API bool Channel4C_CallMode chl_release();
 //////////////////////////////////////////////////////////////////////////
 // node channel management interface.
 Channel4C_API int Channel4C_CallMode chl_open(const char* name, unsigned int heartbeat_ms);
-    /// return 1 : channel has opened.
-    /// return 2 : channel name is too long, max size: 8 bytes.
+    /// return 0x00010001 : channel has opened.
+    /// return 0x00010002 : channel name is too long, max size: 8 bytes.
 
 Channel4C_API void Channel4C_CallMode chl_close(const char* name);
 
 Channel4C_API int Channel4C_CallMode chl_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
-    /// return 3 : channel had connected. please reconnect.
+    /// return 0x00020001 : channel had connected. please reconnect.
 
 Channel4C_API int Channel4C_CallMode chl_reconnect(const char* chan, unsigned int timeout_ms);
 Channel4C_API int Channel4C_CallMode chl_disconnect(const char* chan);
@@ -77,6 +77,7 @@ Channel4C_API bool Channel4C_CallMode chl_joined(const char* chan);
 
 Channel4C_API int Channel4C_CallMode chl_onlines(const char* chan, int* ol_total, char* ol_buf, unsigned int ol_len);
 
+Channel4C_API const char* Channel4C_CallMode chl_strerror(int err);
 
 //////////////////////////////////////////////////////////////////////////
 // the version of sdk.
