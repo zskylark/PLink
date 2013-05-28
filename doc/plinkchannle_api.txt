@@ -15,50 +15,8 @@ Channel4C_API void Channel4C_CallMode chl_close(const char* name);
 Channel4C_API int Channel4C_CallMode chl_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
     /// return 0x00020001 : channel had connected. please reconnect.
 
-Channel4C_API int Channel4C_CallMode chl_reconnect(const char* chan, unsigned int timeout_ms);
-Channel4C_API int Channel4C_CallMode chl_disconnect(const char* chan);
-
-Channel4C_API int Channel4C_CallMode chl_join(const char* chan, unsigned int timeout_ms);
-Channel4C_API int Channel4C_CallMode chl_rejoin(const char* chan, unsigned int timeout_ms);
-
-Channel4C_API void Channel4C_CallMode chl_abort(const char* chan);
-
-
 //////////////////////////////////////////////////////////////////////////
-// node channel subscribe interface.
-Channel4C_API int Channel4C_CallMode chl_subscribe_online_status(const char* chan);
-Channel4C_API int Channel4C_CallMode chl_unsubscribe_online_status(const char* chan);
-Channel4C_API int Channel4C_CallMode chl_subscribe_joined_status(const char* chan);
-Channel4C_API int Channel4C_CallMode chl_unsubscribe_joined_status(const char* chan);
-
-
-//////////////////////////////////////////////////////////////////////////
-// node channel option interface.
-Channel4C_API void Channel4C_CallMode chl_set_pkg_send_timeout(const char* chan, unsigned int timeout_ms);
-Channel4C_API unsigned int Channel4C_CallMode chl_get_pkg_send_timeout(const char* chan);
-
-Channel4C_API void Channel4C_CallMode chl_set_pkg_recv_timeout(const char* chan, unsigned int timeout_ms);
-Channel4C_API unsigned int Channel4C_CallMode chl_get_pkg_recv_timeout(const char* chan);
-
-Channel4C_API void Channel4C_CallMode chl_set_pkg_recv_max_queued(int count);
-Channel4C_API int Channel4C_CallMode chl_get_pkg_recv_max_queued();
-
-Channel4C_API int Channel4C_CallMode chl_get_pkg_body_max_size(const char* chan);
-
-
-//////////////////////////////////////////////////////////////////////////
-// node channel heartbeat management interface.
-Channel4C_API int Channel4C_CallMode chl_heartbeat(const char* chan, unsigned int timeout_ms);
-
-
-//////////////////////////////////////////////////////////////////////////
-// node channel synchronous communication interface.
 Channel4C_API int Channel4C_CallMode chl_send(const char* fr, const char* to, char* snd_buf, unsigned int snd_len, char* rcv_buf, unsigned int* rcv_len, unsigned int timeout_ms);
-Channel4C_API int Channel4C_CallMode chl_ack(const char* fr, const char* to, unsigned int params, char* buf, unsigned int len, unsigned int timeout_ms);
-
-
-//////////////////////////////////////////////////////////////////////////
-// node channel asynchronous communication interface.
 Channel4C_API int Channel4C_CallMode chl_post(const char* fr, const char* to, char* buf, unsigned int len, unsigned int timeout_ms);
 Channel4C_API int Channel4C_CallMode chl_get(unsigned int* type, unsigned int* params, char* fr, char* to, char* buf, unsigned int* len, unsigned int timeout_ms);
     // Type_Chl_Post = 0,
@@ -68,21 +26,3 @@ Channel4C_API int Channel4C_CallMode chl_get(unsigned int* type, unsigned int* p
     // Type_Chl_Join = 4,
     // Type_Chl_ReJoin = 5,
     // Type_Chl_Abort = 6
-
-
-//////////////////////////////////////////////////////////////////////////
-// node channel state interface.
-Channel4C_API bool Channel4C_CallMode chl_connected(const char* chan);
-Channel4C_API bool Channel4C_CallMode chl_joined(const char* chan);
-
-Channel4C_API int Channel4C_CallMode chl_onlines(const char* chan, int* ol_total, char* ol_buf, unsigned int ol_len);
-
-Channel4C_API const char* Channel4C_CallMode chl_strerror(int err);
-
-//////////////////////////////////////////////////////////////////////////
-// the version of sdk.
-Channel4C_API const char* Channel4C_CallMode chl_version();
-
-Channel4C_API const unsigned int Channel4C_CallMode chl_major_version();
-Channel4C_API const unsigned int Channel4C_CallMode chl_minor_version();
-Channel4C_API const unsigned int Channel4C_CallMode chl_micro_version();
