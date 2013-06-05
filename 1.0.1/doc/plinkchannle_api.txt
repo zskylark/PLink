@@ -1,0 +1,28 @@
+//////////////////////////////////////////////////////////////////////////
+// node channel init.
+Channel4C_API bool Channel4C_CallMode chl_initialize();
+Channel4C_API bool Channel4C_CallMode chl_release();
+
+
+//////////////////////////////////////////////////////////////////////////
+// node channel management interface.
+Channel4C_API int Channel4C_CallMode chl_open(const char* name, unsigned int heartbeat_ms);
+    /// return 0x00010001 : channel has opened.
+    /// return 0x00010002 : channel name is too long, max size: 8 bytes.
+
+Channel4C_API void Channel4C_CallMode chl_close(const char* name);
+
+Channel4C_API int Channel4C_CallMode chl_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
+    /// return 0x00020001 : channel had connected. please reconnect.
+
+//////////////////////////////////////////////////////////////////////////
+Channel4C_API int Channel4C_CallMode chl_send(const char* fr, const char* to, char* snd_buf, unsigned int snd_len, char* rcv_buf, unsigned int* rcv_len, unsigned int timeout_ms);
+Channel4C_API int Channel4C_CallMode chl_post(const char* fr, const char* to, char* buf, unsigned int len, unsigned int timeout_ms);
+Channel4C_API int Channel4C_CallMode chl_get(unsigned int* type, unsigned int* params, char* fr, char* to, char* buf, unsigned int* len, unsigned int timeout_ms);
+    // Type_Chl_Post = 0,
+    // Type_Chl_Send = 1,
+    // Type_Chl_Online = 2,
+    // Type_Chl_Offline = 3,
+    // Type_Chl_Join = 4,
+    // Type_Chl_ReJoin = 5,
+    // Type_Chl_Abort = 6
