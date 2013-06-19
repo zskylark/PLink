@@ -14,7 +14,7 @@ PLink server
 2, server software application procedure  
    1, please fill in the following format:  
    Software: PLinkCenter  
-   2, send an email to: <moonnightwatcher@gmail.com>.  
+   2, send an email to <moonnightwatcher@gmail.com>.  
 3, authorization application procedure  
    1, to obtain authorization application documents:  
    key.req  
@@ -27,6 +27,6 @@ PLink server
    Software parameters   
    Maximum number of channels: 128  
    Maximum authorized limit: 6 months  
-   3, send messages (including key.req) to: <moonnightwatcher@gmail.com>.  
+   3, send messages (including key.req) to <moonnightwatcher@gmail.com>.  
 
 Note: All applications will be sent to <moonnightwatcher@gmail.com> within 30 days after we get back to you.  
