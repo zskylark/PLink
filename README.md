@@ -4,13 +4,13 @@
 Distributed messaging system  
 1, distributed, highly concurrent, messaging systems.  
 2, synchronous / asynchronous communication, support notification subscriptions.  
-3, the news channel management, automatic maintenance of network connections.  
+3, the message channel management, automatic maintenance of network connections.  
 4, C language. Cross-platform (currently only supports Windows).  
 5, the client provides a complete SDK.  
 6, based on BSD license.  
 
 PLink server  
-1, completely free of charge.  
+1, completely free to use.  
 2, server software application procedure  
    1, please fill in the following format:  
    Software: PLinkCenter  
@@ -21,7 +21,7 @@ PLink server
    2, please fill in the following format:  
    Country: USA  
    Name: Luc Besson  
-   Tel :001 -646-642-8269  
+   Tel : 001-646-642-8269  
    Reasons for applying: XXXXXXXXX  
    Using industry: xxxxxxxxxxx  
    Software parameters   
