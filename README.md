@@ -5,7 +5,7 @@ Distributed messaging system
 1, distributed, highly concurrent, messaging systems.  
 2, synchronous / asynchronous communication, support notification subscriptions.  
 3, the message channel management, automatic maintenance of network connections.  
-4, C language. Cross-platform (currently only supports Windows).  
+4, C language. Cross-platform (already supports Windows / Android).  
 5, the client provides a complete SDK.  
 6, based on BSD license.  
 
