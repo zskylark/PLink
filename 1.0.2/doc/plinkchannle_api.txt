@@ -6,11 +6,15 @@ Channel4C_API bool Channel4C_CallMode plk_release();
 
 //////////////////////////////////////////////////////////////////////////
 // node channel management interface.
-Channel4C_API int Channel4C_CallMode plk_open(const char* chan, bool keepalive, unsigned int heartbeat_ms);
+Channel4C_API int Channel4C_CallMode plk_open(const char* chan, unsigned int heartbeat_ms);
+    /// open ephemeral channel.
     /// return 0x00010001 : channel has opened.
     /// return 0x00010002 : channel name is too long, max size: 8 bytes.
 
-Channel4C_API void Channel4C_CallMode plk_close(const char* name);
+Channel4C_API int Channel4C_CallMode plk_open_ex(const char* chan);
+    /// open persistent channel.
+
+Channel4C_API void Channel4C_CallMode plk_close(const char* chan);
 
 Channel4C_API int Channel4C_CallMode plk_connect(const char* chan, const char* switch_addr, unsigned int timeout_ms);
     /// return 0x00020001 : channel had connected. please reconnect.
@@ -18,11 +22,12 @@ Channel4C_API int Channel4C_CallMode plk_connect(const char* chan, const char* s
 //////////////////////////////////////////////////////////////////////////
 Channel4C_API int Channel4C_CallMode plk_send(const char* fr, const char* to, char* snd_buf, unsigned int snd_len, char* rcv_buf, unsigned int* rcv_len, unsigned int timeout_ms);
 Channel4C_API int Channel4C_CallMode plk_post(const char* fr, const char* to, char* buf, unsigned int len, unsigned int timeout_ms);
-Channel4C_API int Channel4C_CallMode plk_get(unsigned int* type, unsigned int* params, char* fr, char* to, char* buf, unsigned int* len, unsigned int timeout_ms);
-    // Type_Chl_Post = 1,
-    // Type_Chl_Send = 2,
-    // Type_Chl_Online = 3,
-    // Type_Chl_Offline = 4,
-    // Type_Chl_Join = 5,
-    // Type_Chl_ReJoin = 6,
-    // Type_Chl_Abort = 7
+Channel4C_API int Channel4C_CallMode plk_get(unsigned int* type, unsigned int* params, char* fr, unsigned int* fr_len, char* to, unsigned int* to_len, char* buf, unsigned int* buf_len, unsigned int timeout_ms);
+    /// fr_len, to_len, buf_len: set buffer max size to receiver, when function return, it be set by really buffer length.
+    /// Type_Chl_Post = 1,
+    /// Type_Chl_Send = 2,
+    /// Type_Chl_Online = 3,
+    /// Type_Chl_Offline = 4,
+    /// Type_Chl_Join = 5,
+    /// Type_Chl_ReJoin = 6,
+    /// Type_Chl_Abort = 7
